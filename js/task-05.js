@@ -1,12 +1,10 @@
-const refs = {
-    input: document.querySelector("#name-input"),
-    nameLable: document.querySelector("#name-output"),
-  };
-  
-  refs.input.addEventListener("input", onInputChange);
-  
-  function onInputChange(event) {
-    if (event.currentTarget.value.trim() !== "") {
-      refs.nameLable.textContent = event.currentTarget.value;
-    } else refs.nameLable.textContent = "Anonymous";
+const input = document.querySelector('#name-input');
+const output = document.querySelector('#name-output');
+
+input.addEventListener('input', () => {
+  if (input.value.trim() === '') {
+    output.textContent = 'Anonymous';
+  } else {
+    output.textContent = input.value.trim();
   }
+});
